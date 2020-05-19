@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Formulario de registro</title>
+        
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Direccion</th>
+                    <th>Salario</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="users : ${usersModel}">
+                    <td th:text="${users.name}"></td>
+                    <td th:text="${users.address}"></td>
+                    <td th:text="${users.salary}"></td>
+                    <td>
+                    <a href="#" th:href="@{/users/usersform?id=__${users.id}__}">
+		<button type="button" class="btn btn-default">Modificar</button>
+                    </a>
+		<a href="#" th:href="@{/users/removedUsers?id=__${users.id}__}">
+		<button type="button" class="btn btn-danger">Eliminar</button>
+                    </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+       <a href="#" th:href="@{/users/usersform?id=0}">
+		<button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Add contact</button>
+		</a>
+    </body>
+</html>

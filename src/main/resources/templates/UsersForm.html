@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+       </head>
+    <body>
+        <form action="#" th:action="@{/users/addUser}" th:object="${usersModel}" method="post">
+            <fieldset>
+                <input type="text" th:value="${name}" th:field="*{name}" />
+                <legend>Registro de usuarios mongodb</legend>
+                <label>Ingrese su nombre Completo</label>
+                <input type="text"  th:value="${name}" th:field="*{name}"/>
+                <tr />
+                <tr />
+                <label>Ingrese su direccion</label>
+                <input type="text" th:value="${address}" th:field="*{address}"  />
+                <tr />
+                <tr />
+                <label>Ingrese su Salario</label>
+                <input type="text" th:value="${salary}" th:field="*{salary}"/>
+                <tr />
+                <tr />
+                
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Accept
+				</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

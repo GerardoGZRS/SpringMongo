@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        
+    </head>
+    <body>
+        <form action="#" th:action="@{/profesores/addProfesor}" th:object="${profesorModel}" method="post">
+            <fieldset>
+                
+                <legend>Registro de Profesores</legend>
+                <input type="text" th_value="${id}" th:field="*{id}" />
+                <label>Nombre del profesor</label>
+                <input type="text"  th:value="${nombre}" th:field="*{nombre}"/>
+                <br />
+                <br />
+                <label>Apellido Paterno</label>
+                <input type="text" th:value="${apellidoPaterno}" th:field="*{apellidoPaterno}"  />
+                <br />
+                <br />
+                <label>Apellido Materno</label>
+                <input type="text" th:value="${apellidoMaterno}" th:field="*{apellidoMaterno}"/>
+                <br />
+                <br />
+                <label>Correo: </label>
+                <input type="text" th:value="${correo}" th:field="*{correo}"/>
+                <br />
+                <br />
+                <label>Asignatura</label>
+                <input type="text" th:value="${asignatura}" th:field="*{asignatura}"/>
+                <br />
+                <br />
+                 <label>Hora</label>
+                <input type="text" th:value="${hora}" th:field="*{hora}"/>
+                <br />
+                <br />
+                <button onclick="window.location.replace('profesores/showProfesores')" class="btn btn-lg btn-primary btn-block" type="submit">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Accept
+				</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

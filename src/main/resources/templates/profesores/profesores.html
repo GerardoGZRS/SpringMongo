@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <script type="text/javascript" src="/js/chart.js" th:src="@{/js/chart.js}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+<!--C:\mongo-spring-boot-master\src\main\resources\js\profesores.js-->
+
+    </head>
+    
+    <body>
+
+        <div ng-app="myApp" ng-controller="myCtrl">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Correo</th>
+                    <th>Asignatura</th>
+                    <th>Hora</th>
+                    <th>Options</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="profesores : ${profesores}">
+                    <td th:text="${profesores.nombre}"></td>
+                    <td th:text="${profesores.apellidoPaterno}"></td>
+                    <td th:text="${profesores.apellidoMaterno}"></td>
+                    <td th:text="${profesores.correo}"></td>
+                    <td th:text="${profesores.asignatura}"></td>
+                    <td th:text="${profesores.hora}"></td>
+                    <td>
+                    <a href="#" th:href="@{/profesores/profesoresform?id=__${profesores.id}__}">
+		<button type="button" class="btn btn-default">Modificar</button>
+                    </a>
+		<a href="#" th:href="@{/profesores/removedProfesores?id=__${profesores.id}__}">
+		<button type="button" class="btn btn-danger">Eliminar</button>
+                    </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <br/>
+        <a href="#" th:href="@{/profesores/profesoresform?id=0}">
+		<button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Add contact</button>
+		</a>
+        
+        <h1>My Web Page</h1>
+
+<div id="piechart"></div>
+
+
+              </div>
+    
+    </body>
+    <script type="text/javascript" src="/js/profesores.js" th:src="@{/js/profesores.js}"/> 
+
+</html>
